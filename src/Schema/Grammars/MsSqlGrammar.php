@@ -39,4 +39,26 @@ class MsSqlGrammar extends SqlServerGrammar
 	{
 		return 'uniqueidentifier';
 	}
+
+	/**
+	 * @author Michał Durys <md@miinto.com>
+	 *
+	 * @param Fluent $column
+	 * @return string
+	 */
+	protected function typeMoney(Fluent $column)
+	{
+		return 'money';
+	}
+
+	/**
+	 * @author Michał Durys <md@miinto.com>
+	 *
+	 * @param Fluent $column
+	 * @return string
+	 */
+	protected function typeSmallMoney(Fluent $column)
+	{
+		return 'smallmoney';
+	}
 }

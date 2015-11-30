@@ -38,4 +38,26 @@ class MsSqlBlueprint extends Blueprint
 	{
 		return $this->addColumn('uniqueidentifier', $column);
 	}
+
+	/**
+	 * @author Michał Durys <md@miinto.com>
+	 *
+	 * @param string $column
+	 * @return \Illuminate\Support\Fluent
+	 */
+	public function money($column)
+	{
+		return $this->addColumn('money', $column);
+	}
+
+	/**
+	 * @author Michał Durys <md@miinto.com>
+	 *
+	 * @param string $column
+	 * @return \Illuminate\Support\Fluent
+	 */
+	public function smallMoney($column)
+	{
+		return $this->addColumn('smallmoney', $column);
+	}
 }
