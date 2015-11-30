@@ -1,0 +1,27 @@
+{
+    "name": "miinto/laravel-mssql",
+    "license": "MIT",
+    "description": "Laravel extension which allows to use MS SQL specific column types like 'datetime2', 'real' and 'uniqueidentifier'.",
+    "keywords": ["laravel", "mssql"],
+    "homepage": "https://github.com/miinto/laravel-mssql",
+    "authors": [
+        {
+            "name": "Michał Durys",
+            "email": "md@miinto.com",
+            "homepage": "https://github.com/mdurys"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Miinto\\Database\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "illuminate/database": "5.*",
+        "illuminate/support": "5.*",
+        "phpunit/phpunit": "5.0.*"
+    }
+}
