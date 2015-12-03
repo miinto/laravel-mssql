@@ -6,13 +6,7 @@ Add package to `composer.json`:
 
     "require": {
         "miinto/laravel-mssql": "dev-master"
-    },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "git@github.com:miinto/laravel-mssql.git"
-        }
-    ]
+    }
 
 Install package using composer:
 
