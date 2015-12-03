@@ -1,9 +1,13 @@
 <?php
 
+use Illuminate\Database\Connection;
+use Miinto\Database\MsSqlConnection;
 use Miinto\Database\Schema\Grammars\MsSqlGrammar;
 use Miinto\Database\Schema\MsSqlBlueprint;
-use Miinto\Database\MsSqlConnection;
 
+/**
+ * Class DatabaseMySqlSchemaGrammarTest
+ */
 class DatabaseMySqlSchemaGrammarTest extends PHPUnit_Framework_TestCase
 {
 	public function testAddDateTime2()
@@ -56,6 +60,11 @@ class DatabaseMySqlSchemaGrammarTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals('alter table "test" add "column1" smallmoney not null', $statements[0]);
 	}
 
+
+	/**
+	 * @author Michał Durys <md@miinto.com>
+	 * @return PHPUnit_Framework_MockObject_MockObject|Connection
+	 */
 	private function getConnection()
 	{
 		return $this
@@ -64,6 +73,11 @@ class DatabaseMySqlSchemaGrammarTest extends PHPUnit_Framework_TestCase
 			->getMock();
 	}
 
+
+	/**
+	 * @author Michał Durys <md@miinto.com>
+	 * @return MsSqlGrammar
+	 */
 	private function getGrammar()
 	{
 		return new MsSqlGrammar();
