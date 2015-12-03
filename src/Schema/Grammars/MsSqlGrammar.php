@@ -1,16 +1,20 @@
-<?php
-
-namespace Miinto\Database\Schema\Grammars;
+<?php namespace Miinto\Database\Schema\Grammars;
 
 use Illuminate\Database\Schema\Grammars\SqlServerGrammar;
 use Illuminate\Support\Fluent;
 
+/**
+ * Class MsSqlGrammar
+ *
+ * @package Miinto\Database\Schema\Grammars
+ */
 class MsSqlGrammar extends SqlServerGrammar
 {
 	/**
 	 * @author Michał Durys <md@miinto.com>
 	 *
 	 * @param Fluent $column
+	 *
 	 * @return string
 	 */
 	protected function typeDateTime2(Fluent $column)
@@ -18,10 +22,12 @@ class MsSqlGrammar extends SqlServerGrammar
 		return 'datetime2';
 	}
 
+
 	/**
 	 * @author Michał Durys <md@miinto.com>
 	 *
 	 * @param Fluent $column
+	 *
 	 * @return string
 	 */
 	protected function typeReal(Fluent $column)
@@ -29,10 +35,12 @@ class MsSqlGrammar extends SqlServerGrammar
 		return 'real';
 	}
 
+
 	/**
 	 * @author Michał Durys <md@miinto.com>
 	 *
 	 * @param Fluent $column
+	 *
 	 * @return string
 	 */
 	protected function typeUniqueIdentifier(Fluent $column)
@@ -40,10 +48,12 @@ class MsSqlGrammar extends SqlServerGrammar
 		return 'uniqueidentifier';
 	}
 
+
 	/**
 	 * @author Michał Durys <md@miinto.com>
 	 *
 	 * @param Fluent $column
+	 *
 	 * @return string
 	 */
 	protected function typeMoney(Fluent $column)
@@ -51,10 +61,12 @@ class MsSqlGrammar extends SqlServerGrammar
 		return 'money';
 	}
 
+
 	/**
 	 * @author Michał Durys <md@miinto.com>
 	 *
 	 * @param Fluent $column
+	 *
 	 * @return string
 	 */
 	protected function typeSmallMoney(Fluent $column)
