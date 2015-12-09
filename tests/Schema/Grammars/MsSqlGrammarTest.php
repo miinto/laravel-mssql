@@ -10,6 +10,17 @@ use Miinto\Database\Schema\MsSqlBlueprint;
  */
 class DatabaseMySqlSchemaGrammarTest extends PHPUnit_Framework_TestCase
 {
+	public function testAddBit()
+	{
+		$blueprint = new MsSqlBlueprint('test');
+		$blueprint->bit('column1');
+		$statements = $blueprint->toSql($this->getConnection(), $this->getGrammar());
+
+		$this->assertEquals(1, count($statements));
+		$this->assertEquals('alter table "test" add "column1" bit not null', $statements[0]);
+	}
+
+
 	public function testAddDateTime2()
 	{
 		$blueprint = new MsSqlBlueprint('test');
@@ -19,6 +30,7 @@ class DatabaseMySqlSchemaGrammarTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals(1, count($statements));
 		$this->assertEquals('alter table "test" add "column1" datetime2 not null', $statements[0]);
 	}
+
 
 	public function testAddReal()
 	{
@@ -30,6 +42,7 @@ class DatabaseMySqlSchemaGrammarTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals('alter table "test" add "column1" real not null', $statements[0]);
 	}
 
+
 	public function testAddUniqueIdentifier()
 	{
 		$blueprint = new MsSqlBlueprint('test');
@@ -40,6 +53,7 @@ class DatabaseMySqlSchemaGrammarTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals('alter table "test" add "column1" uniqueidentifier not null', $statements[0]);
 	}
 
+
 	public function testMoney()
 	{
 		$blueprint = new MsSqlBlueprint('test');
@@ -49,6 +63,7 @@ class DatabaseMySqlSchemaGrammarTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals(1, count($statements));
 		$this->assertEquals('alter table "test" add "column1" money not null', $statements[0]);
 	}
+
 
 	public function testSmallMoney()
 	{
@@ -67,10 +82,7 @@ class DatabaseMySqlSchemaGrammarTest extends PHPUnit_Framework_TestCase
 	 */
 	private function getConnection()
 	{
-		return $this
-			->getMockBuilder(MsSqlConnection::class)
-			->disableOriginalConstructor()
-			->getMock();
+		return $this->getMockBuilder(MsSqlConnection::class)->disableOriginalConstructor()->getMock();
 	}
 
 

@@ -37,6 +37,7 @@ Use `mssql` connection in `config/database.php`:
 
 ## Available column types
 
+	$table->bit('name');
 	$table->dateTime2('name');
 	$table->real('name');
 	$table->uniqueIdentifier('name');

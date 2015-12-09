@@ -17,6 +17,19 @@ class MsSqlGrammar extends SqlServerGrammar
 	 *
 	 * @return string
 	 */
+	protected function typebit(Fluent $column)
+	{
+		return 'bit';
+	}
+
+
+	/**
+	 * @author Michał Durys <md@miinto.com>
+	 *
+	 * @param Fluent $column
+	 *
+	 * @return string
+	 */
 	protected function typeDateTime2(Fluent $column)
 	{
 		return 'datetime2';

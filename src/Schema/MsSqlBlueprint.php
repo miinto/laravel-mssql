@@ -16,6 +16,19 @@ class MsSqlBlueprint extends Blueprint
 	 *
 	 * @return \Illuminate\Support\Fluent
 	 */
+	public function bit($column)
+	{
+		return $this->addColumn('bit', $column);
+	}
+
+
+	/**
+	 * @author Michał Durys <md@miinto.com>
+	 *
+	 * @param string $column
+	 *
+	 * @return \Illuminate\Support\Fluent
+	 */
 	public function dateTime2($column)
 	{
 		return $this->addColumn('datetime2', $column);
