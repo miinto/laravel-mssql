@@ -76,6 +76,17 @@ class DatabaseMySqlSchemaGrammarTest extends PHPUnit_Framework_TestCase
 	}
 
 
+	public function testXml()
+	{
+		$blueprint = new MsSqlBlueprint('test');
+		$blueprint->xml('column1');
+		$statements = $blueprint->toSql($this->getConnection(), $this->getGrammar());
+
+		$this->assertEquals(1, count($statements));
+		$this->assertEquals('alter table "test" add "column1" xml not null', $statements[0]);
+	}
+
+
 	/**
 	 * @author Michał Durys <md@miinto.com>
 	 * @return PHPUnit_Framework_MockObject_MockObject|Connection

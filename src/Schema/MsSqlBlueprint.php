@@ -85,4 +85,17 @@ class MsSqlBlueprint extends Blueprint
 	{
 		return $this->addColumn('smallmoney', $column);
 	}
+
+
+	/**
+	 * @author Simon Jensen <sj@miinto.com>
+	 *
+	 * @param string $column
+	 *
+	 * @return \Illuminate\Support\Fluent
+	 */
+	public function xml($column)
+	{
+		return $this->addColumn('xml', $column);
+	}
 }

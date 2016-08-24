@@ -86,4 +86,17 @@ class MsSqlGrammar extends SqlServerGrammar
 	{
 		return 'smallmoney';
 	}
+
+
+	/**
+	 * @author Simon Jensen <sj@miinto.com>
+	 *
+	 * @param Fluent $column
+	 *
+	 * @return string
+	 */
+	protected function typeXml(Fluent $column)
+	{
+		return 'xml';
+	}
 }
