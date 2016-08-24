@@ -41,6 +41,7 @@ Use `mssql` connection in `config/database.php`:
 	$table->dateTime2('name');
 	$table->real('name');
 	$table->uniqueIdentifier('name');
+	$table->xml('name');
 
 These column types are also available, but they are a bad choice for storing
 monetary values, so think twice before using them.
